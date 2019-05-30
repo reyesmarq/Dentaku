@@ -1,0 +1,33 @@
+// media queries map
+$breakpoints: (
+  small: 320px,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1440px
+);
+
+//image path folder
+$image-path: '/assets/img/';
+
+$z-index: (
+  back: -10,
+  normal: 1,
+  tooltip: 10,
+  fixed: 100,
+  modal: 1000
+);
+
+// fonts and vertical rhythm
+$font-size: 16px;
+$scale: 1.618;
+$line-height: 2rem;
+$line-height-lines: false;
+$vertical-rhythm: false;
+
+// font-size
+$default: $font-size;
+$heading3: $default * $scale;
+$heading2: $heading3 * $scale;
+$heading1: $heading2 * $scale;
+$small: $default / $scale;
+$smaller: $small / $scale;

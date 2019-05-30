@@ -1,0 +1,87 @@
+// media queries
+//// configuration breakpoints are in variables
+// ============================================
+@mixin mq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else if type-of($breakpoint)==number and unit($breakpoint)=='px'
+
+  or type-of($breakpoint)==number and unit($breakpoint)=='em'
+
+  or type-of($breakpoint)==number and unit($breakpoint)=='rem' {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+// vertical rhythm lines
+//// to use use just turn $line-height-lines true
+//// $line-height-lines located at variables
+// ============================================
+@mixin line-height-lines() {
+  @if $line-height-lines == true {
+    background-image: linear-gradient(#fff 95%, rgba(0, 119, 179, 0.2) 95%);
+    background-size: 100% $line-height;
+    background-position: 0 $line-height;
+  }
+}
+
+// vertical rhythm per element
+//// to use use just turn $vertical-rhythm true
+//// $vertical-rhythm located at variables
+// ============================================
+@mixin font($font) {
+  @if $vertical-rhythm == true {
+    @if $font == 'heading1' {
+      font-size: $heading1;
+      line-height: $line-height * 3;
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+    }
+
+    @else if $font == 'heading2' {
+      font-size: $heading2;
+      line-height: $line-height * 2;
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+    }
+
+    @else if $font == 'heading3' {
+      font-size: $heading3;
+      line-height: $line-height;
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+    }
+
+    @else if $font == 'default' {
+      font-size: $default;
+      line-height: $line-height;
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+    }
+
+    @else if $font == 'small' {
+      font-size: $small;
+      line-height: $line-height;
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+    }
+
+    @else if $font == 'smaller' {
+      font-size: $smaller;
+      line-height: $line-height;
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+    }
+
+    @else if $font == 'paragraph' {
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+    }
+  }
+}

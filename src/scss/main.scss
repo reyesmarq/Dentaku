@@ -1,0 +1,49 @@
+// ================================================================ 
+//// This is scss folder structure is base on SMACSS and ITCSS ////
+// ================================================================  
+
+// Vendors
+//// All of the third party styling tools
+// ============================================
+
+
+// Settings
+// ============================================
+@import "settings/placeholders";
+@import "settings/functions";
+@import "settings/variables";
+@import "settings/mixins";
+
+// Base and elements
+//// Tags styling
+//// Any normalize
+//// Styles that aren't depend of classes
+// ============================================
+@import "base/base";
+
+// Layout
+//// This is the geometry of the page. What is going up, down, left, right, to the center.
+//// How many columns is the page divided. 
+//// Do not put colors, typographys, decorations.
+//// What is geometry, margins, paddings, positioning, etc...
+// ============================================
+@import "layout/layout";
+
+// Components
+//// these are all of the little peaces of ui of your interface, such buttons, tables, menus, login, modals, etc.
+//// You need to create additional files per component
+// ============================================
+@import "components/calculator";
+
+// Theme
+//// This is what defines a project visually. LOOK & FEEL.
+// ============================================
+@import "theme/typography";
+@import "theme/colors";
+
+// Hacks
+//// These are hacks that you needed to resolve any kind of conflict. It suppose you resolve these conflicts later
+//// You need them separate because you don't want to have this peace of hack all over the place.
+//// Therefore when you are about to resolve it, you know where to find it. 
+// ============================================
+@import "hacks/hacks";

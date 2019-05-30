@@ -1,0 +1,40 @@
+// px to em converter
+// ============================================
+@function em($px, $base: 16px) {
+  @if type-of($px)==number and unit($px)=='px' {
+    @return $px / $base * 1em;
+  }
+
+  @return null;
+}
+
+// Img location
+// ============================================
+@function img($img) {
+  @return url($image-path + $img);
+}
+
+// Column system
+//// This columns system can be used alone or along with the 
+//// for function down below
+// ============================================
+@function col($columns, $total-columns) {
+  @return percentage($columns / $total-columns);
+}
+
+// @for $i from 1 through 12 {
+//   .cols-#{$i} {
+//     width: col($i, 12)
+//   }
+// }
+
+// Long Shadow
+// ============================================
+@function long-shadow($shadows, $color) {
+  $shadow: #{1px 1px $color};
+
+  @for $i from 2 through $shadows {
+    $shadow: append($shadow, #{$i * 1px $i * 1px $color}, comma)
+  }
+  @return $shadow;
+}

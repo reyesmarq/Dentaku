@@ -1,0 +1,94 @@
+// font-weight
+//// depending on the typography selected
+//// just because you want to pug bold, does not means 
+//// that the typography supports it
+$normal: 400;
+$semibold: 600;
+
+// typography and vertical rhythm
+
+
+
+:root {
+  font-size: $font-size;
+
+  @include mq(medium) {
+    font-size: $font-size + 2;
+  }
+
+  @include mq(large) {
+    font-size: $font-size + 4;
+  }
+
+  @include mq(xlarge) {
+    font-size: $font-size + 6;
+  }
+}
+
+
+// Tipography and vertical rhythm
+body {
+  @include line-height-lines();
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: $line-height;
+  max-width: 560px;
+  margin: auto; 
+}
+
+h1 {
+  @include font('heading1');
+}
+
+h2 {
+  @include font('heading2');
+}
+
+h3 {
+  @include font('heading3')
+}
+
+h4 {
+  @include font('default')
+}
+
+h5 {
+  @include font('small')
+}
+
+h6 {
+  @include font('smaller')
+}
+
+p, ul, ol, pre, table, blockquote {
+  @include font('paragraph')
+}
+
+ul {
+  padding-left: $line-height * 1.5;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+// Let's make sure all's aligned
+hr, .hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+a, b, i, strong, em, small, code {
+  line-height: 0;
+}
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
